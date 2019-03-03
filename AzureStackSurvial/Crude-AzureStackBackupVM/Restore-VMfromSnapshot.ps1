@@ -40,9 +40,7 @@ else {
 #Disk and snapshotconfiguration
 $OSSnapshot = Get-AzureRmSnapshot  | where{$_.name -eq $OSsnapshotName}
 $diskConfig = New-AzureRmDiskConfig -Location $OSsnapshot.Location -SourceResourceId $OSsnapshot.Id -CreateOption Copy
-get-date
 $OSdisk = New-AzureRmDisk -Disk $diskConfig -ResourceGroupName $resourceGroupName -DiskName $osDiskName
-get-date
 #Initialize virtual machine configuration
 $VirtualMachine = New-AzureRmVMConfig -VMName $virtualMachineName -VMSize $virtualMachineSize
 #Use the Managed Disk Resource Id to attach it to the virtual machine. Please change the OS type to linux if OS disk has linux OS

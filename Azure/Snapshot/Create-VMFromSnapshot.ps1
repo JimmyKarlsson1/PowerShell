@@ -81,7 +81,7 @@ else {
     New-AzureRmStorageAccount -ResourceGroupName $resourceGroupName -Name $StorageaccountName -SkuName Standard_LRS -Location $Location -Kind StorageV2 -AccessTier Hot -EnableHttpsTrafficOnly:$true
     $VirtualMachine = Set-AzureRmVMBootDiagnostics -VM $VirtualMachine -StorageAccountName $StorageaccountName -Enable:$true -ResourceGroupName $resourceGroupName
 }
-#$VirtualMachine = Set-AzureRmBootDiagnostic -VM $VirtualMachine -StorageAccountName "hejsan"
+
 If($PublicIP -eq "Yes")
 {
 	#Create a public IP for the VM

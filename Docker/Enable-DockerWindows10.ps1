@@ -1,3 +1,4 @@
+#Requires -RunAsAdministrator
 If(!((Get-WmiObject Win32_Processor).VirtualizationFirmwareEnabled))
 {
     Write-Output "Virtualization is not enabled, please enable"

@@ -11,8 +11,8 @@ Param(
 )
 
 #Read username and paassword so we do not get a prompt
-$username = Read-Host 
-$password = Read-Host -AsSecureString
+$username = Read-Host -Prompt UserName
+$password = Read-Host -Prompt Password -AsSecureString
 $cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $username, $password
 
 Add-AzureRMEnvironment -Name "AzureStackUser" -ArmEndpoint $AzureStackURL
